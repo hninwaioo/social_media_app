@@ -72,28 +72,29 @@ class NewsFeedHomeViewPage extends StatelessWidget {
                 builder: (context, newsFeedList, child) =>
 
                     // TypicalText("text", Colors.black, 16)
-                // ListView.separated(
-                //   shrinkWrap: true,
-                //   itemCount: newsFeedList?.length??0,
-                //   separatorBuilder: (_, __) => const Divider(),
-                //   itemBuilder: (context, int index) {
-                //     return
-                //       NewsFeedItemView(
-                //                 newsFeedVO: newsFeedList?[index],
-                //                 onTapDelete: (newsFeedId){
-                //                   var bloc = Provider.of<NewsFeedBloc>(context,listen: false);
-                //                   bloc.onTapDeletePost(newsFeedId);
-                //                 },
-                //                 onTapEdit: (newsFeedId){
-                //                   Future.delayed(const Duration(milliseconds: 1000))
-                //                       .then((value){
-                //                     _navigateToEditPostScreen(context,newsFeedId);
-                //                   });
-                //                 },
-                //
-                //     );
-                //   },
-                // ),
+                ListView.separated(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: newsFeedList?.length??0,
+                  separatorBuilder: (_, __) => const Divider(),
+                  itemBuilder: (context, int index) {
+                    return
+                      NewsFeedItemView(
+                                newsFeedVO: newsFeedList?[index],
+                                onTapDelete: (newsFeedId){
+                                  var bloc = Provider.of<NewsFeedBloc>(context,listen: false);
+                                  bloc.onTapDeletePost(newsFeedId);
+                                },
+                                onTapEdit: (newsFeedId){
+                                  Future.delayed(const Duration(milliseconds: 1000))
+                                      .then((value){
+                                    _navigateToEditPostScreen(context,newsFeedId);
+                                  });
+                                },
+
+                    );
+                  },
+                ),
 
               // Consumer<NewsFeedBloc>(
               //     builder: (context, bloc, child) =>
@@ -103,30 +104,30 @@ class NewsFeedHomeViewPage extends StatelessWidget {
 
                 // Center(child: TypicalText("HHHH", Colors.black, 16))
 
-                ListView.builder(
-                  shrinkWrap: true,
-                          itemCount: newsFeedList?.length,
-                          physics: NeverScrollableScrollPhysics(),
-                        itemBuilder: (context, index) {
-
-                        return
-                          // Center(child: TypicalText("HHHH", Colors.black, 16));
-
-                          NewsFeedItemView(
-                          newsFeedVO: newsFeedList?[index],
-                          onTapDelete: (newsFeedId){
-                            var bloc = Provider.of<NewsFeedBloc>(context,listen: false);
-                            bloc.onTapDeletePost(newsFeedId);
-                          },
-                          onTapEdit: (newsFeedId){
-                            Future.delayed(const Duration(milliseconds: 1000))
-                                .then((value){
-                              _navigateToEditPostScreen(context,newsFeedId);
-                            });
-                          },
-                        );
-
-                      },),
+                // ListView.builder(
+                //   shrinkWrap: true,
+                //           itemCount: newsFeedList?.length,
+                //           physics: NeverScrollableScrollPhysics(),
+                //         itemBuilder: (context, index) {
+                //
+                //         return
+                //           // Center(child: TypicalText("HHHH", Colors.black, 16));
+                //
+                //           NewsFeedItemView(
+                //           newsFeedVO: newsFeedList?[index],
+                //           onTapDelete: (newsFeedId){
+                //             var bloc = Provider.of<NewsFeedBloc>(context,listen: false);
+                //             bloc.onTapDeletePost(newsFeedId);
+                //           },
+                //           onTapEdit: (newsFeedId){
+                //             Future.delayed(const Duration(milliseconds: 1000))
+                //                 .then((value){
+                //               _navigateToEditPostScreen(context,newsFeedId);
+                //             });
+                //           },
+                //         );
+                //
+                //       },),
 
               )
             ],

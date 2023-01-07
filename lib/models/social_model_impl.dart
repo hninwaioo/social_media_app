@@ -7,8 +7,8 @@ import 'package:social_media_app/models/authentication_model_impl.dart';
 import 'package:social_media_app/models/social_model.dart';
 import 'package:social_media_app/network/social_data_agent.dart';
 
-// import '../network/cloud_firestore_data_agent_impl.dart';
-import '../network/real_time_database_data_agent_impl.dart';
+import '../network/cloud_firestore_data_agent_impl.dart';
+// import '../network/real_time_database_data_agent_impl.dart';
 
 // const fileUploadRef = "uploads";
 
@@ -20,8 +20,8 @@ class SocialModelImpl extends SocialModel {
     return _singleton;
   }
   SocialModelImpl._internal();
-  SocialDataAgent mDataAgent = RealtimeDatabaseDataAgentImpl();
-  // SocialDataAgent mDataAgent = CloudFireStoreDataAgentImpl();
+  // SocialDataAgent mDataAgent = RealtimeDatabaseDataAgentImpl();
+  SocialDataAgent mDataAgent = CloudFireStoreDataAgentImpl();
 
   AuthenticationModel _authenticationModel = AuthenticationModelImpl();
 

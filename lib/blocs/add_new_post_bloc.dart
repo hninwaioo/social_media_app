@@ -90,7 +90,8 @@ class AddNewPostBloc extends ChangeNotifier{
       isAddNewPostError = true;
       _notifySafety();
       return Future.error("Error");
-    }else{
+    }
+    else{
       isLoading = true;
       _notifySafety();
       isAddNewPostError = false;
