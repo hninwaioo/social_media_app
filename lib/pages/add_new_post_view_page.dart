@@ -94,6 +94,7 @@ class PrimaryButtonPostView extends StatelessWidget {
         themeColor: bloc.themeColor,
       ),
     );
+
   }
 }
 
