@@ -105,6 +105,8 @@ class AddNewPostBloc extends ChangeNotifier{
         return _createNewNewsfeedPost().then((value){
           isLoading = false;
           _notifySafety();
+          debugPrint("imageUrl=>${newPostDescription}");
+
           _sendAnalyticsData(addNewPostAction, null);
         });
       }

@@ -3,7 +3,6 @@ import 'package:social_media_app/analytics/firebase_analytics_tracker.dart';
 import 'package:social_media_app/models/authentication_model.dart';
 import 'package:social_media_app/models/authentication_model_impl.dart';
 import 'package:social_media_app/models/social_model_impl.dart';
-
 import '../data/vos/news_feed_vo.dart';
 import '../models/social_model.dart';
 
