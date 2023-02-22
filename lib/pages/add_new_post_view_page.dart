@@ -81,6 +81,7 @@ class AddNewPostViewPage extends StatelessWidget {
   }
 }
 
+
 class PrimaryButtonPostView extends StatelessWidget {
   const PrimaryButtonPostView({
     Key? key,
